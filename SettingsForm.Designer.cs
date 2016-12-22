@@ -28,12 +28,14 @@
          this.Password = new System.Windows.Forms.TextBox();
          this.PasswordLabel = new System.Windows.Forms.Label();
          this.Save = new System.Windows.Forms.Button();
+         this.Email = new System.Windows.Forms.TextBox();
+         this.EmailLabel = new System.Windows.Forms.Label();
          this.SuspendLayout();
          // 
          // CommanderNameLabel
          // 
          this.CommanderNameLabel.AutoSize = true;
-         this.CommanderNameLabel.Location = new System.Drawing.Point(13, 29);
+         this.CommanderNameLabel.Location = new System.Drawing.Point(13, 58);
          this.CommanderNameLabel.Name = "CommanderNameLabel";
          this.CommanderNameLabel.Size = new System.Drawing.Size(94, 13);
          this.CommanderNameLabel.TabIndex = 0;
@@ -41,14 +43,14 @@
          // 
          // CommanderName
          // 
-         this.CommanderName.Location = new System.Drawing.Point(16, 46);
+         this.CommanderName.Location = new System.Drawing.Point(16, 75);
          this.CommanderName.Name = "CommanderName";
          this.CommanderName.Size = new System.Drawing.Size(325, 20);
          this.CommanderName.TabIndex = 1;
          // 
          // Password
          // 
-         this.Password.Location = new System.Drawing.Point(16, 89);
+         this.Password.Location = new System.Drawing.Point(16, 118);
          this.Password.Name = "Password";
          this.Password.Size = new System.Drawing.Size(325, 20);
          this.Password.TabIndex = 3;
@@ -57,7 +59,7 @@
          // PasswordLabel
          // 
          this.PasswordLabel.AutoSize = true;
-         this.PasswordLabel.Location = new System.Drawing.Point(13, 72);
+         this.PasswordLabel.Location = new System.Drawing.Point(13, 101);
          this.PasswordLabel.Name = "PasswordLabel";
          this.PasswordLabel.Size = new System.Drawing.Size(112, 13);
          this.PasswordLabel.TabIndex = 2;
@@ -65,7 +67,7 @@
          // 
          // Save
          // 
-         this.Save.Location = new System.Drawing.Point(16, 129);
+         this.Save.Location = new System.Drawing.Point(16, 162);
          this.Save.Name = "Save";
          this.Save.Size = new System.Drawing.Size(75, 23);
          this.Save.TabIndex = 4;
@@ -73,11 +75,29 @@
          this.Save.UseVisualStyleBackColor = true;
          this.Save.Click += new System.EventHandler(this.Save_Click);
          // 
+         // Email
+         // 
+         this.Email.Location = new System.Drawing.Point(16, 35);
+         this.Email.Name = "Email";
+         this.Email.Size = new System.Drawing.Size(325, 20);
+         this.Email.TabIndex = 6;
+         // 
+         // EmailLabel
+         // 
+         this.EmailLabel.AutoSize = true;
+         this.EmailLabel.Location = new System.Drawing.Point(13, 18);
+         this.EmailLabel.Name = "EmailLabel";
+         this.EmailLabel.Size = new System.Drawing.Size(35, 13);
+         this.EmailLabel.TabIndex = 5;
+         this.EmailLabel.Text = "E-mail";
+         // 
          // SettingsForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(353, 179);
+         this.ClientSize = new System.Drawing.Size(353, 197);
+         this.Controls.Add(this.Email);
+         this.Controls.Add(this.EmailLabel);
          this.Controls.Add(this.Save);
          this.Controls.Add(this.Password);
          this.Controls.Add(this.PasswordLabel);
@@ -98,5 +118,7 @@
       private System.Windows.Forms.TextBox Password;
       private System.Windows.Forms.Label PasswordLabel;
       private System.Windows.Forms.Button Save;
+      private System.Windows.Forms.TextBox Email;
+      private System.Windows.Forms.Label EmailLabel;
    }
 }
