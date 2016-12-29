@@ -30,6 +30,7 @@
          this.Save = new System.Windows.Forms.Button();
          this.Email = new System.Windows.Forms.TextBox();
          this.EmailLabel = new System.Windows.Forms.Label();
+         this.Close = new System.Windows.Forms.Button();
          this.SuspendLayout();
          // 
          // CommanderNameLabel
@@ -67,6 +68,7 @@
          // 
          // Save
          // 
+         this.Save.DialogResult = System.Windows.Forms.DialogResult.OK;
          this.Save.Location = new System.Drawing.Point(16, 162);
          this.Save.Name = "Save";
          this.Save.Size = new System.Drawing.Size(75, 23);
@@ -91,11 +93,22 @@
          this.EmailLabel.TabIndex = 5;
          this.EmailLabel.Text = "E-mail";
          // 
+         // Close
+         // 
+         this.Close.DialogResult = System.Windows.Forms.DialogResult.Abort;
+         this.Close.Location = new System.Drawing.Point(265, 162);
+         this.Close.Name = "Close";
+         this.Close.Size = new System.Drawing.Size(75, 23);
+         this.Close.TabIndex = 7;
+         this.Close.Text = "Close";
+         this.Close.UseVisualStyleBackColor = true;
+         // 
          // SettingsForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(353, 197);
+         this.Controls.Add(this.Close);
          this.Controls.Add(this.Email);
          this.Controls.Add(this.EmailLabel);
          this.Controls.Add(this.Save);
@@ -120,5 +133,6 @@
       private System.Windows.Forms.Button Save;
       private System.Windows.Forms.TextBox Email;
       private System.Windows.Forms.Label EmailLabel;
+      private System.Windows.Forms.Button Close;
    }
 }

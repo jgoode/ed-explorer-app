@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 
@@ -11,6 +12,9 @@ namespace ED_Explorer {
       private int _interval;
       //Timespan created when interval is set
       private TimeSpan _recentTimeSpan;
+      private string currentLog;
+
+
       #endregion
 
       #region Constructors
@@ -73,8 +77,8 @@ namespace ED_Explorer {
 
          base.Created += OnCreated;
          base.Changed += OnChanged;
-         base.Deleted += OnDeleted;
-         base.Renamed += OnRenamed;
+        // base.Deleted += OnDeleted;
+        // base.Renamed += OnRenamed;
       }
 
       /// <summary>
@@ -99,11 +103,13 @@ namespace ED_Explorer {
                TimeSpan timeSinceLastEvent = currentTime - lastEventTime;
                retVal = timeSinceLastEvent < _recentTimeSpan;
                _lastFileEvent[fileName] = currentTime;
+               //return true;
             } else {
                // If dictionary does not contain the filename, 
                // no event has occured in past for this file, so set return value to false
                // and annd filename alongwith current datetime to the dictionary
                _lastFileEvent.Add(fileName, DateTime.Now);
+               return false;
             }
          }
 
@@ -123,15 +129,15 @@ namespace ED_Explorer {
             OnCreated(e);
       }
 
-      private void OnDeleted(object sender, FileSystemEventArgs e) {
-         if (!HasAnotherFileEventOccuredRecently(e.FullPath))
-            OnDeleted(e);
-      }
+      //private void OnDeleted(object sender, FileSystemEventArgs e) {
+      //   if (!HasAnotherFileEventOccuredRecently(e.FullPath))
+      //      OnDeleted(e);
+      //}
 
-      private void OnRenamed(object sender, RenamedEventArgs e) {
-         if (!HasAnotherFileEventOccuredRecently(e.OldFullPath))
-            OnRenamed(e);
-      }
+      //private void OnRenamed(object sender, RenamedEventArgs e) {
+      //   if (!HasAnotherFileEventOccuredRecently(e.OldFullPath))
+      //      OnRenamed(e);
+      //}
       #endregion
       #endregion
 
